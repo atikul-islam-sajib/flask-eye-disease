@@ -3,86 +3,100 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Eye Disease Classification task in CNN</title>
+	<title>Checking the Website</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+	
 	<style type="text/css">
-        body{
-            background-image: url('static/eye-nature-eyes-12139255.jpg')
-            background-repeat: no-repeat;
-			font-family: 'Source Code Pro', monospace;
-        }
-		.container
+		body
 		{
-			background-color: #EFC6C6;
+			background-color: #eb5534;
 		}
-		h1
-		{   
-			margin-top: 150px;
+		.image-check
+		{
+			width: 400px;
+			margin: 20px auto;
+		}
+		.image
+		{
+			width: 400px;
+		}
+		.title
+		{
 			text-align: center;
-			text-transform: uppercase;
 			text-decoration: underline;
+			text-transform: uppercase;
+			color: #f1f0eb;
 			font-family: 'Source Code Pro', monospace;
-		}
-		.label
-		{
-			text-transform: uppercase;
-			text-decoration: underline;
-		}
-		.upload-file
-		{
-			height: 100px;
-			display: inline-block;
-			margin-left: 617px;
-			padding-top: 62px;
-			font-size: 20px;
 		}
 		.clear
 		{
 			clear: both;
 		}
-        .image-check
-        {
-			margin-left: 45%;
-        }
-        h3{
-            text-align: center;
-            font-size: 25px;
-        }
-        span{
-            background-color: #57324d;
-            color: white;
-        }
+		.line
+		{
+			width: 50%;
+			font-family: 'Source Code Pro', monospace;
+			color: white;
+		}
+		.file-upload
+		{
+			width: 49%;
+			margin: 20px auto;
+		}
+		.file-style
+		{
+			margin: 10px 30px;
+			color: black;
+			font-size: 15px;
+		}
+		.predict
+		{   
+			width: 200px;
+			margin: 20px auto;
+			color: white;
+			font-family: 'Source Code Pro', monospace;
+
+		}
+		.image-check1
+		{
+			width: 250px;
+		}
+		.h3_block
+		{   
+			text-transform: uppercase;
+			text-align: left;
+		}
 	</style>
 </head>
 <body>
-	<div class="container">
-		<h1>Welcome to the EYE Disease Classification</h1>
+	<div class = "image-check">
+		<h3 class="title">Welcome to the eye disease classification</h3>
+		<img class = "image" src="https://visioneyeinstitute.com.au/wp-content/uploads/healthy-eyes-2.jpg">
+	</div>
+	<hr class="line">
+	<div class="clear"></div>
 
-		<div class="upload-file">
-			<form action="/" method = "post" enctype="multipart/form-data">
-				<label class="label">Please Upload the file</label><br><br>
-			    <input type="file" name="file" placeholder="Upload the file" value="Upload the file" autocomplete="off" required>
-			    <input type="submit" name="submit" value="Click here to Submit">
-			</form><br><br>
-		</div>
-	</div><br><br>
-    <div class="clear"></div>
+	<div class="file-upload">
+		<form action="/" method = "post" enctype="multipart/form-data">
+			<label class = "title">Upload file</label>
+			<input class="file-style" type="file" name="file" value="file" autocomplete="off" required>
+			<input class="file-style" type="submit" name="submit" value="Click here to submit">
+		</form>
+	</div>
 
-
-    <div class="predict">
-        <img class = "image-check" src={{img}} alt="Flowers in Chania" width = 200px;><br>
+	<div class="predict">
+        <img class = "image-check1" src = {{img}}  alt="Flowers in Chania" width = 200px;><br>
         {% if result == 0 %}
-            <h3>The prediction of the image is <span>"cataract"</span>.</h3>
+            <h3 class = "h3_block">The prediction of the image is "cataract".</h3>
         {% elif result == 1 %}
-            <h3>The prediction of the image is <span>"diabetics retinopathy"</span>.</h3>
+            <h3 class = "h3_block">The prediction of the image is "diabetics retinopathy".</h3>
         {% elif result == 2 %}
-            <h3>The prediction of the image is <span>"glaucoma"</span>.</h3>
+            <h3 class = "h3_block">The prediction of the image is "glaucoma".</h3>
         {% elif result == 3 %}
-            <h3>The prediction of the image is <span>"normal"</span>.</h3>
+            <h3 class = "h3_block">The prediction of the image is "normal".</h3>
         {% endif %}
     </div>
-
 </body>
 </html>
