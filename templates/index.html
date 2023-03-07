@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Eye Disease Classification task in CNN</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+	<style type="text/css">
+        body{
+            background-image: url('static/eye-nature-eyes-12139255.jpg')
+            background-repeat: no-repeat;
+			font-family: 'Source Code Pro', monospace;
+        }
+		.container
+		{
+			background-color: #EFC6C6;
+		}
+		h1
+		{   
+			margin-top: 150px;
+			text-align: center;
+			text-transform: uppercase;
+			text-decoration: underline;
+			font-family: 'Source Code Pro', monospace;
+		}
+		.label
+		{
+			text-transform: uppercase;
+			text-decoration: underline;
+		}
+		.upload-file
+		{
+			height: 100px;
+			display: inline-block;
+			margin-left: 617px;
+			padding-top: 62px;
+			font-size: 20px;
+		}
+		.clear
+		{
+			clear: both;
+		}
+        .image-check
+        {
+			margin-left: 45%;
+        }
+        h3{
+            text-align: center;
+            font-size: 25px;
+        }
+        span{
+            background-color: #57324d;
+            color: white;
+        }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to the EYE Disease Classification</h1>
+
+		<div class="upload-file">
+			<form action="/" method = "post" enctype="multipart/form-data">
+				<label class="label">Please Upload the file</label><br><br>
+			    <input type="file" name="file" placeholder="Upload the file" value="Upload the file" autocomplete="off" required>
+			    <input type="submit" name="submit" value="Click here to Submit">
+			</form><br><br>
+		</div>
+	</div><br><br>
+    <div class="clear"></div>
+
+
+    <div class="predict">
+        <img class = "image-check" src={{img}} alt="Flowers in Chania" width = 200px;><br>
+        {% if result == 0 %}
+            <h3>The prediction of the image is <span>"cataract"</span>.</h3>
+        {% elif result == 1 %}
+            <h3>The prediction of the image is <span>"diabetics retinopathy"</span>.</h3>
+        {% elif result == 2 %}
+            <h3>The prediction of the image is <span>"glaucoma"</span>.</h3>
+        {% elif result == 3 %}
+            <h3>The prediction of the image is <span>"normal"</span>.</h3>
+        {% endif %}
+    </div>
+
+</body>
+</html>
