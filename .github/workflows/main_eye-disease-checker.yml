@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'eye-disease-checker'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F703C87A31BD46A6B737E68C6370F89C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_06F62184BA974958B447A638BD72A230 }}
